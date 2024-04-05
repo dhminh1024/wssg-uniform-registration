@@ -1,0 +1,56 @@
+{
+ "charts": [
+  {
+   "chart_name": "Order History",
+   "label": "Order History"
+  }
+ ],
+ "content": "[{\"id\":\"AdK8VwZp6N\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Uniform Registration</span>\",\"col\":12}},{\"id\":\"6DpyHR2A7E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"#Order\",\"col\":4}},{\"id\":\"VxJs1Bkq5F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Value\",\"col\":4}},{\"id\":\"-fyP83unId\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Order History\",\"col\":12}},{\"id\":\"xETEweFXhm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Ur Employee\",\"col\":3}}]",
+ "creation": "2024-04-05 09:27:42.453328",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-monthly-rank",
+ "idx": 0,
+ "indicator_color": "light-blue",
+ "is_hidden": 0,
+ "label": "Uniform Registration",
+ "links": [],
+ "modified": "2024-04-05 15:13:07.823459",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "Uniform Registration",
+ "number_cards": [
+  {
+   "label": "#Order",
+   "number_card_name": "#Order"
+  },
+  {
+   "label": "Total Value",
+   "number_card_name": "Total Value"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "UR Admin"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Ur Employee",
+   "link_to": "UR Employee",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Uniform Registration"
+}

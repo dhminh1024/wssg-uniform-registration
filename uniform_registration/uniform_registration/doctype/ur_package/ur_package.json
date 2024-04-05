@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-02 14:13:12.627641",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_type_id",
+  "title",
+  "column_break_agzw",
+  "gender",
+  "section_break_zvdn",
+  "item_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_type_id",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Employee Type",
+   "options": "UR Employee Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Title",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_agzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zvdn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_list",
+   "fieldtype": "Table",
+   "label": "Item List",
+   "options": "UR Package Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-02 14:18:41.573382",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "UR Package",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "translated_doctype": 1
+}

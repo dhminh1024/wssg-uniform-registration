@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2024-04-02 13:38:16.478415",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_code",
+  "full_name",
+  "employee_type_id",
+  "bonus",
+  "column_break_jsea",
+  "email",
+  "gender",
+  "avatar"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Employee Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "bonus",
+   "fieldtype": "Float",
+   "label": "Bonus"
+  },
+  {
+   "fieldname": "column_break_jsea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "avatar",
+   "fieldtype": "Attach Image",
+   "label": "Avatar"
+  },
+  {
+   "fieldname": "employee_type_id",
+   "fieldtype": "Link",
+   "label": "Employee Type",
+   "options": "UR Employee Type"
+  }
+ ],
+ "image_field": "avatar",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-05 13:55:53.375061",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "UR Employee",
+ "naming_rule": "By script",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "UR Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1,
+ "track_views": 1,
+ "translated_doctype": 1
+}

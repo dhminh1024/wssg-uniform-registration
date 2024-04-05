@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-02 14:02:55.213795",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_id",
+  "shopping_cart",
+  "total_price"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "UR Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shopping_cart",
+   "fieldtype": "Table",
+   "label": "Shopping Cart",
+   "options": "UR Order Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_price",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Total Price",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-05 13:56:12.301244",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "UR Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "UR Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}

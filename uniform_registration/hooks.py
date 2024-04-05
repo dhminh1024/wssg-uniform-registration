@@ -4,17 +4,18 @@ app_publisher = "Digital Learning Team"
 app_description = "Wellspring\'s tool for uniform registration based on personal budget"
 app_email = "digital.learning@wellspringsaigon.edu.vn"
 app_license = "mit"
+app_logo_url = "/assets/uniform_registration/images/wellspring_logo.png"
 # required_apps = []
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/uniform_registration/css/uniform_registration.css"
+app_include_css = "/assets/uniform_registration/css/uniform_registration.css"
 # app_include_js = "/assets/uniform_registration/js/uniform_registration.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/uniform_registration/css/uniform_registration.css"
+web_include_css = "/assets/uniform_registration/css/uniform_registration.css"
 # web_include_js = "/assets/uniform_registration/js/uniform_registration.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -32,6 +33,11 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+website_context = {
+	"favicon": "/assets/uniform_registration/images/wssg_favicon.svg",
+	"splash_image": "/assets/uniform_registration/images/logo_wssg.png",
+}
 
 # Svg Icons
 # ------------------
@@ -227,3 +233,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
+export_python_type_annotations = True
+
+fixtures = [{"doctype": "Client Script", "filters": [["module" , "in" , ("Uniform Registration" )]]}]

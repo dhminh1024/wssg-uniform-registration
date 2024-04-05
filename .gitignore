@@ -5,3 +5,6 @@
 tags
 node_modules
 __pycache__
+
+uniform_registration/public/frontend
+uniform_registration/www/frontend.html

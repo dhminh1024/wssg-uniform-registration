@@ -1,0 +1,8 @@
+.page-card-head img {
+  max-height: 200px !important;
+}
+
+.navbar-brand .app-logo {
+  max-height: 100px !important;
+  width: auto;
+}

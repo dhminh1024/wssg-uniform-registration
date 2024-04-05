@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "UR Employee",
+  "enabled": 1,
+  "modified": "2024-04-05 14:41:22.729567",
+  "module": "Uniform Registration",
+  "name": "Hide Filter List",
+  "script": "$(\".list-group-by\").hide();",
+  "view": "List"
+ }
+]
