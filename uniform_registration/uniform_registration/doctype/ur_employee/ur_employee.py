@@ -22,6 +22,7 @@ class UREmployee(Document):
         full_name: DF.Data
         gender: DF.Literal["Male", "Female"]
         status: DF.Literal["None", "Ordered"]
+
     # end: auto-generated types
     def get_budget(self):
         return frappe.get_doc("UR Employee Type", self.employee_type_id).budget
@@ -31,6 +32,11 @@ class UREmployee(Document):
 def get_percentage_of_ordered_employee():
     ordered_employee = frappe.db.count("UR Order")
     total_employee = frappe.db.count("UR Employee")
+    if total_employee == 0:
+        return {
+            "value": 0,
+            "fieldtype": "Percent",
+        }
     percentage = (ordered_employee / total_employee) * 100
 
     return {
