@@ -31,8 +31,7 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Full Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "bonus",
@@ -69,6 +68,8 @@
   {
    "fieldname": "employee_type_id",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
    "label": "Employee Type",
    "options": "UR Employee Type"
   },
@@ -85,7 +86,7 @@
  "image_field": "avatar",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-08 12:01:04.311884",
+ "modified": "2024-04-11 16:08:24.276076",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Employee",

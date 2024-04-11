@@ -88,12 +88,8 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
 
       <div>
         <div className="flex justify-between items-center">
-          <span className="text-base">
-            <Trans i18nKey={"Quantity"} />
-          </span>
-          <span className="text-base">
-            <Trans i18nKey={"Size"} />
-          </span>
+          <span className="text-base">{t("Quantity")}</span>
+          <span className="text-base">{t("Size")}</span>
         </div>
         <div className="flex justify-between items-center">
           <QuantityModifier quantity={quantity} setQuantity={setQuantity} />
@@ -102,7 +98,7 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
       </div>
 
       <p className="text-base text-orange-500">
-        <Trans i18nKey={"Total Price"} />: {fCurrency(quantity * product.price)}
+        {t("Total Price")}: {fCurrency(quantity * product.price)}
       </p>
       <Button
         className="w-full"

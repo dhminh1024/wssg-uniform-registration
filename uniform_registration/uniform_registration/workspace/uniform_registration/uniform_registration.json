@@ -9,7 +9,7 @@
    "label": "Order History"
   }
  ],
- "content": "[{\"id\":\"AdK8VwZp6N\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Uniform Registration</span>\",\"col\":12}},{\"id\":\"6DpyHR2A7E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"#Order\",\"col\":3}},{\"id\":\"VxJs1Bkq5F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Value\",\"col\":3}},{\"id\":\"SnqRidnaBt\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"#Employee\",\"col\":3}},{\"id\":\"HB4_GCI119\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"% Ordered\",\"col\":3}},{\"id\":\"-fyP83unId\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Order History\",\"col\":12}},{\"id\":\"QPKfo9kyDQ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Item Count\",\"col\":12}},{\"id\":\"UQxg4SZoF4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cqRa7yDK_j\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Order\",\"col\":4}},{\"id\":\"jP3K1CGoiB\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ytPn7JAWkO\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}}]",
+ "content": "[{\"id\":\"AdK8VwZp6N\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Uniform Registration</span>\",\"col\":12}},{\"id\":\"6DpyHR2A7E\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"#Order\",\"col\":3}},{\"id\":\"VxJs1Bkq5F\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Value\",\"col\":3}},{\"id\":\"SnqRidnaBt\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"#Employee\",\"col\":3}},{\"id\":\"HB4_GCI119\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"% Ordered\",\"col\":3}},{\"id\":\"-fyP83unId\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Order History\",\"col\":12}},{\"id\":\"QPKfo9kyDQ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Item Count\",\"col\":12}},{\"id\":\"UQxg4SZoF4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cqRa7yDK_j\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Orders\",\"col\":4}},{\"id\":\"jP3K1CGoiB\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"ytPn7JAWkO\",\"type\":\"card\",\"data\":{\"card_name\":\"Lists\",\"col\":4}}]",
  "creation": "2024-04-05 09:27:42.453328",
  "custom_blocks": [],
  "docstatus": 0,
@@ -121,7 +121,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-04-11 09:22:31.319556",
+ "modified": "2024-04-11 15:38:04.145709",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "Uniform Registration",
@@ -149,7 +149,7 @@
  "quick_lists": [
   {
    "document_type": "UR Order",
-   "label": "Recent Order",
+   "label": "Recent Orders",
    "quick_list_filter": "[]"
   }
  ],

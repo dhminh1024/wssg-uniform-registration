@@ -40,7 +40,7 @@ const LanguageDropdownSwitcher: React.FC<{
       await i18n.changeLanguage(locale);
       // only refresh the page if it's home page
       if (window.location.pathname === "/") {
-        window.location.reload();
+        // window.location.reload();
       }
     },
     [i18n, onChange]

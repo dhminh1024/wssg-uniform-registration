@@ -7,8 +7,8 @@ import { CircleDollarSign } from "lucide-react";
 import { AuthContext } from "@/context/auth-provider";
 import { fCurrency } from "@/lib/format/format-number";
 import { useAppStore } from "@/core/stores/store";
-// import Trans from "@/components/trans";
-import { Trans } from "react-i18next";
+
+import { useTranslation } from "react-i18next";
 
 const getFirstLettersInFullName = (fullName: string | undefined) => {
   if (!fullName) return "";
@@ -18,6 +18,7 @@ const getFirstLettersInFullName = (fullName: string | undefined) => {
 
 export const AccountCard: FC = () => {
   const { currentUser } = useContext(AuthContext);
+  const { t } = useTranslation();
 
   return (
     <Card>
@@ -38,9 +39,7 @@ export const AccountCard: FC = () => {
         <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all">
           <CircleDollarSign className="mt-px h-5 w-5" />
           <div className="space-y-1">
-            <p className="text-lg font-medium leading-none">
-              <Trans i18nKey={"Budget"} />
-            </p>
+            <p className="text-lg font-medium leading-none">{t("Budget")}</p>
             <p className="text-sm text-muted-foreground">
               {fCurrency(Number(useAppStore.getState().budget))}
             </p>

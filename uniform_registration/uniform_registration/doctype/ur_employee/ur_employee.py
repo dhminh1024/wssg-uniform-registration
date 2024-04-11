@@ -22,7 +22,6 @@ class UREmployee(Document):
         full_name: DF.Data
         gender: DF.Literal["Male", "Female"]
         status: DF.Literal["None", "Ordered"]
-
     # end: auto-generated types
     def get_budget(self):
         return frappe.get_doc("UR Employee Type", self.employee_type_id).budget

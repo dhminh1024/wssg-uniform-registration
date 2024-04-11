@@ -81,11 +81,9 @@ export const CartCard: FC = () => {
     <Card>
       <CardHeader className="space-y-1">
         <CardTitle className="text-lg font-semibold">
-          <Trans i18nKey="Your Shopping Cart" />
+          {t("Your Shopping Cart")}
         </CardTitle>
-        <CardDescription>
-          <Trans i18nKey="What you have ordered" />
-        </CardDescription>
+        <CardDescription>{t("What you have ordered")}</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         {isEmpty(shoppingCart) ? (
@@ -128,7 +126,7 @@ export const CartCard: FC = () => {
         <Separator className="my-1" />
         <div className="flex justify-end">
           <span className="text-base font-medium leading-none">
-            <Trans i18nKey={"Total Price"} />: {fCurrency(totalPrice)}
+            {t("Total Price")}: {fCurrency(totalPrice)}
           </span>
         </div>
         {budgetLeft ? (
@@ -264,9 +262,7 @@ const EditItemPopup: FC<EditItemPopupProps> = ({ employeeId, product }) => {
           </div>
           <div className="grid gap-2">
             <div className="flex justify-between items-center">
-              <Label htmlFor="item-size">
-                <Trans i18nKey={"Size"} />
-              </Label>
+              <Label htmlFor="item-size">{t("Size")}</Label>
               <SelectSize
                 sizes={product.item_sizes}
                 size={itemSize}
@@ -293,9 +289,7 @@ const EditItemPopup: FC<EditItemPopupProps> = ({ employeeId, product }) => {
               </Select> */}
             </div>
             <div className="flex justify-between items-center">
-              <Label htmlFor="item-quantity">
-                <Trans i18nKey={"Quantity"} />
-              </Label>
+              <Label htmlFor="item-quantity">{t("Quantity")}</Label>
               <QuantityModifier
                 quantity={itemQuantity}
                 setQuantity={setItemQuantity}
@@ -316,7 +310,7 @@ const EditItemPopup: FC<EditItemPopupProps> = ({ employeeId, product }) => {
               disabled={updateItemLoading}
               onClick={() => handleUpdateItem(employeeId, product.name)}
             >
-              <Trans i18nKey={"Save"} />
+              {t("Save")}
             </Button>
           </div>
         </div>

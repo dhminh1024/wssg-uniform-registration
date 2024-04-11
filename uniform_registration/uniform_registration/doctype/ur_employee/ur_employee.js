@@ -18,3 +18,15 @@ frappe.ui.form.on("UR Employee", {
     // $(".list-unstyled.sidebar-menu.text-muted").hide();
   },
 });
+
+function ExportButtonFunction(listview) {
+  frappe.msgprint("Importing...");
+}
+
+frappe.listview_settings["UR Employee"] = {
+  refresh: function (listview) {
+    // listview.page.add_inner_button(__("Import"), function () {
+    //   ExportButtonFunction(listview);
+    // });
+  },
+};

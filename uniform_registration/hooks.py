@@ -243,5 +243,8 @@ fixtures = [
     {
         "doctype": "Client Script",
         "filters": [["module", "in", ("Uniform Registration")]],
-    }
+    },
+    {
+        "doctype": "UR Employee Type",
+    },
 ]

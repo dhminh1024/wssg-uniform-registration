@@ -32,14 +32,10 @@ export const ProductListToolbar: FC<ProductListToolbarProps> = ({
         >
           <TabsList>
             <TabsTrigger value="Male">
-              <span className="text-base">
-                <Trans i18nKey={"Male"} />
-              </span>
+              <span className="text-base">{t("Male")}</span>
             </TabsTrigger>
             <TabsTrigger value="Female">
-              <span className="text-base">
-                <Trans i18nKey={"Female"} />
-              </span>
+              <span className="text-base">{t("Female")}</span>
             </TabsTrigger>
           </TabsList>
         </Tabs>

@@ -1,6 +1,10 @@
 {
   "Home": "Trang chủ",
   "Products": "Sản phẩm",
+  "Employee Code": "Mã nhân viên",
+  "Example": "Ví dụ",
+  "With capitalized W": "Viết hoa chữ W",
+  "Language": "Ngôn ngữ",
   "Male": "Nam",
   "Female": "Nữ",
   "Filter products": "Tìm sản phẩm...",
@@ -13,6 +17,7 @@
   "Your Shopping Cart": "Giỏ hàng của bạn",
   "What you have ordered": "Sản phẩm bạn đã chọn",
   "Sign Out": "Đăng xuất",
+  "Sign In": "Đăng nhập",
   "uniformRegistration": "Đăng ký đồng phục 2024",
   "Within Budget": "Ngân sách còn lại: {{budgetLeft}}",
   "Out of Budget": "Vượt ngân sách: {{budgetLeft}}",

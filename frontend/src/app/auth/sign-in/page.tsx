@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { useTransition, type FC } from "react";
 import { usePasswordSignIn } from "./hooks/use-password-sign-in";
 import {
   Form,
@@ -15,15 +15,17 @@ import { ErrorBanner } from "@/components/state/error-banner";
 import { Logo } from "@/components/layout/logo";
 import LanguageDropdownSwitcher from "@/components/language-dropdown-switcher";
 import { Label } from "@/components/ui/label";
+import { useTranslation } from "react-i18next";
 
 const DISPLAY_NAME = "SignIn";
 
 const Component: FC = () => {
+  const { t } = useTranslation();
   const { form, error: loginError, handlePasswordSignIn } = usePasswordSignIn();
 
   return (
     <div className="flex h-screen w-screen flex-1 flex-col justify-between px-2 lg:px-0">
-      <div className="m-auto w-64 flex flex-col">
+      <div className="m-auto w-[400px] flex flex-col">
         <Logo className="mb-6" />
 
         <h3 className="text-2xl font-semibold tracking-tight text-center">
@@ -36,7 +38,7 @@ const Component: FC = () => {
         {loginError && <ErrorBanner error={loginError} />}
 
         <div className="flex flex-col gap-4">
-          <Label>Ngôn ngữ | Language</Label>
+          <Label>{t("Language")}</Label>
           <LanguageDropdownSwitcher />
         </div>
 
@@ -73,7 +75,8 @@ const Component: FC = () => {
               render={({ field, formState: { isSubmitting } }) => (
                 <FormItem>
                   <FormLabel htmlFor="input-password">
-                    Mã số nhân viên | Employee Code {requiredIndicator}
+                    {/* Mã số nhân viên | Employee Code {requiredIndicator} */}
+                    {t("Employee Code")} {requiredIndicator}
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -85,14 +88,17 @@ const Component: FC = () => {
                       type="password"
                     />
                   </FormControl>
-                  <FormDescription>Example "W00123"</FormDescription>
+                  <FormDescription>
+                    <span>{t("Example")}: "W00123"</span>
+                    <span> ({t("With capitalized W")})</span>
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
             <Button type="submit" disabled={form.formState.isSubmitting}>
-              Sign in
+              {t("Sign in")}
             </Button>
           </form>
         </Form>
