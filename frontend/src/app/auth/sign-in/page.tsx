@@ -3,6 +3,7 @@ import { usePasswordSignIn } from "./hooks/use-password-sign-in";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -10,14 +11,16 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { ErrorBanner } from "@/components/state/error-banner";
 import { Logo } from "@/components/layout/logo";
+import LanguageDropdownSwitcher from "@/components/language-dropdown-switcher";
+import { Label } from "@/components/ui/label";
 
 const DISPLAY_NAME = "SignIn";
 
 const Component: FC = () => {
   const { form, error: loginError, handlePasswordSignIn } = usePasswordSignIn();
+
   return (
     <div className="flex h-screen w-screen flex-1 flex-col justify-between px-2 lg:px-0">
       <div className="m-auto w-64 flex flex-col">
@@ -32,11 +35,17 @@ const Component: FC = () => {
 
         {loginError && <ErrorBanner error={loginError} />}
 
+        <div className="flex flex-col gap-4">
+          <Label>Ngôn ngữ | Language</Label>
+          <LanguageDropdownSwitcher />
+        </div>
+
         <Form {...form}>
           <form
             className="flex flex-col gap-4"
             onSubmit={form.handleSubmit(handlePasswordSignIn)}
           >
+            <div></div>
             <FormField
               control={form.control}
               name="email"
@@ -64,7 +73,7 @@ const Component: FC = () => {
               render={({ field, formState: { isSubmitting } }) => (
                 <FormItem>
                   <FormLabel htmlFor="input-password">
-                    Password{requiredIndicator}
+                    Mã số nhân viên | Employee Code {requiredIndicator}
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -76,6 +85,7 @@ const Component: FC = () => {
                       type="password"
                     />
                   </FormControl>
+                  <FormDescription>Example "W00123"</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}

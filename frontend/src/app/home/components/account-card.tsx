@@ -6,6 +6,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CircleDollarSign } from "lucide-react";
 import { AuthContext } from "@/context/auth-provider";
 import { fCurrency } from "@/lib/format/format-number";
+import { useAppStore } from "@/core/stores/store";
+// import Trans from "@/components/trans";
+import { Trans } from "react-i18next";
 
 const getFirstLettersInFullName = (fullName: string | undefined) => {
   if (!fullName) return "";
@@ -27,36 +30,25 @@ export const AccountCard: FC = () => {
             </AvatarFallback>
           </Avatar>
           <div className="space-y-1">
-            <p className="text-2xl font-semibold">{currentUser?.full_name}</p>
-            <p className="text-normal text-muted-foreground">
-              {currentUser?.title}
-            </p>
+            <p className="text-lg font-semibold">{currentUser?.full_name}</p>
+            <p className="text-muted-foreground">{currentUser?.title}</p>
           </div>
         </div>
 
         <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all">
           <CircleDollarSign className="mt-px h-5 w-5" />
           <div className="space-y-1">
-            <p className="text-sm font-medium leading-none">Budget</p>
+            <p className="text-lg font-medium leading-none">
+              <Trans i18nKey={"Budget"} />
+            </p>
             <p className="text-sm text-muted-foreground">
-              {fCurrency(Number(currentUser?.budget))}
+              {fCurrency(Number(useAppStore.getState().budget))}
             </p>
           </div>
         </div>
-
-        {/* <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all">
-          <ShoppingCart className="mt-px h-5 w-5" />
-          <div className="space-y-1">
-            <p className="text-sm font-medium leading-none">Package</p>
-            <p className="text-sm text-muted-foreground">Item 1</p>
-            <p className="text-sm text-muted-foreground">Item 2</p>
-            <p className="text-sm text-muted-foreground">Item 3</p>
-            <p className="text-sm text-muted-foreground">Item 4</p>
-          </div>
-        </div> */}
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Submit</Button>
+        <Button className="w-full hidden">Submit</Button>
       </CardFooter>
     </Card>
   );

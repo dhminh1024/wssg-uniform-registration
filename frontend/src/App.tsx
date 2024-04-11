@@ -4,6 +4,7 @@ import { Suspense, type FC } from "react";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./app/router";
 import { AuthProvider } from "./context/auth-provider";
+import { SettingsProvider } from "./context/settings-provider";
 
 const App: FC = () => {
   const getSiteName = () => {
@@ -24,15 +25,25 @@ const App: FC = () => {
     <Suspense fallback={<FullPageLoader />}>
       <FrappeProvider
         // url={import.meta.env.VITE_FRAPPE_PATH ?? ""}
+        tokenParams={{
+          useToken: true,
+          token: () =>
+            `${import.meta.env.VITE_API_KEY}:${
+              import.meta.env.VITE_API_SECRET
+            }`,
+          type: "token",
+        }}
         enableSocket={true}
         socketPort={import.meta.env.VITE_SOCKET_PORT}
         siteName={getSiteName()}
       >
         <AuthProvider>
-          <RouterProvider
-            router={router}
-            fallbackElement={<FullPageLoader className="w-screen" />}
-          />
+          <SettingsProvider>
+            <RouterProvider
+              router={router}
+              fallbackElement={<FullPageLoader className="w-screen" />}
+            />
+          </SettingsProvider>
         </AuthProvider>
       </FrappeProvider>
     </Suspense>

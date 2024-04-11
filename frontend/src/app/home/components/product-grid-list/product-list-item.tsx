@@ -7,33 +7,32 @@ import { Badge } from "@/components/ui/badge";
 import { AuthContext } from "@/context/auth-provider";
 import { useFrappePostCall, useSWRConfig } from "frappe-react-sdk";
 import { useToast } from "@/components/ui/use-toast";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { getServerErrors } from "@/lib/format/error-server-message";
+import { URItem } from "@/types/UniformRegistration/URItem";
+// import Trans from "@/components/trans";
+import { Trans, useTranslation } from "react-i18next";
+import { SelectSize } from "./select-size";
+import { Size } from "@/types/UniformRegistration/Size";
+import { SettingsContext } from "@/context/settings-provider";
 
 export type ProductListItemProps = {
-  product: {
-    name: string;
-    title: string;
-    price: number;
-    item_image: string;
-  };
+  product: URItem;
 };
 
 export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState("M");
+  const [size, setSize] = useState<Size>(
+    product.sizes.split(",")[0].toUpperCase() as Size
+  );
   const { currentUser } = useContext(AuthContext);
+  const { allowRegistration } = useContext(SettingsContext);
+
   const { call, loading } = useFrappePostCall(
     "uniform_registration.api.order.add_to_order"
   );
   const { mutate } = useSWRConfig();
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleAddToCart = () => {
     call({
@@ -43,6 +42,7 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
       price: product.price,
       quantity: quantity,
       size: size,
+      sizes: product.sizes,
     })
       .then((data) => {
         toast({
@@ -55,7 +55,7 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
         toast({
           variant: "destructive",
           title: "Error",
-          description: getServerErrors(e),
+          description: t(getServerErrors(e)),
         });
       });
   };
@@ -75,12 +75,12 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
         </button> */}
       </div>
       <div className="flex justify-between items-center mt-6">
-        <p className="pointer-events-none block truncate text-xl font-medium text-gray-900">
+        <p className="pointer-events-none block truncate text-lg font-medium text-gray-900">
           {product.title}
         </p>
         <Badge
           variant="secondary"
-          className="absolute top-2 right-2 pointer-events-none block text-sm font-semibold text-gray-500"
+          className="absolute top-2 right-2 pointer-events-none block text-sm font-semibold text-orange-500"
         >
           {fCurrency(product.price)}
         </Badge>
@@ -88,32 +88,27 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
 
       <div>
         <div className="flex justify-between items-center">
-          <span className="text-lg">Quantity</span>
-          <span className="text-lg">Size</span>
+          <span className="text-base">
+            <Trans i18nKey={"Quantity"} />
+          </span>
+          <span className="text-base">
+            <Trans i18nKey={"Size"} />
+          </span>
         </div>
         <div className="flex justify-between items-center">
           <QuantityModifier quantity={quantity} setQuantity={setQuantity} />
-          <Select value={size} onValueChange={(value) => setSize(value)}>
-            <SelectTrigger className="w-[80px]">
-              <SelectValue placeholder="Size" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="S">S</SelectItem>
-              <SelectItem value="M">M</SelectItem>
-              <SelectItem value="L">L</SelectItem>
-              <SelectItem value="L">L</SelectItem>
-              <SelectItem value="XL">XL</SelectItem>
-              <SelectItem value="XXL">XXL</SelectItem>
-              <SelectItem value="XXXL">XXXL</SelectItem>
-            </SelectContent>
-          </Select>
+          <SelectSize sizes={product.sizes} size={size} setSize={setSize} />
         </div>
       </div>
 
-      <p className="text-lg">
-        Total Price: {fCurrency(quantity * product.price)}
+      <p className="text-base text-orange-500">
+        <Trans i18nKey={"Total Price"} />: {fCurrency(quantity * product.price)}
       </p>
-      <Button className="w-full" onClick={handleAddToCart} disabled={loading}>
+      <Button
+        className="w-full"
+        onClick={handleAddToCart}
+        disabled={loading || !allowRegistration}
+      >
         Order
       </Button>
     </li>

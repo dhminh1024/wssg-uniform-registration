@@ -16,6 +16,7 @@ class UROrderItem(Document):
 
 		item_id: DF.Link
 		item_image: DF.AttachImage | None
+		item_sizes: DF.Data
 		item_title: DF.Data
 		order_id: DF.Link
 		parent: DF.Data
@@ -23,6 +24,6 @@ class UROrderItem(Document):
 		parenttype: DF.Data
 		price: DF.Int
 		quantity: DF.Int
-		size: DF.Literal["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+		size: DF.Literal["NONE", "XS", "S", "M", "L", "XL", "XXL", "XXXL"]
 	# end: auto-generated types
 	pass

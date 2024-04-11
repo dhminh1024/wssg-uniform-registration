@@ -1,6 +1,8 @@
 import { FrappeError } from "frappe-react-sdk";
 import { useMemo } from "react";
-import { Alert, AlertDescription } from "../ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
+import { useTranslation } from "react-i18next";
+import { AlertCircle } from "lucide-react";
 
 interface ParsedErrorMessage {
   message: string;
@@ -9,6 +11,8 @@ interface ParsedErrorMessage {
 }
 
 export const ErrorBanner = ({ error }: { error: FrappeError }) => {
+  const { t } = useTranslation();
+
   const messages = useMemo(() => {
     if (!error) return [];
     let eMessages: ParsedErrorMessage[] = error?._server_messages
@@ -55,9 +59,11 @@ export const ErrorBanner = ({ error }: { error: FrappeError }) => {
 
   return (
     <Alert className="my-2" variant="destructive">
+      <AlertCircle className="h-4 w-4" />
+      <AlertTitle>Error</AlertTitle>
       <AlertDescription>
         {messages.map((m, i) => (
-          <div key={i}>{m.message}</div>
+          <div key={i}>{t(m.message)}</div>
         ))}
       </AlertDescription>
     </Alert>

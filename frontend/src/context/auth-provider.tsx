@@ -1,16 +1,11 @@
+import { UREmployee } from "@/types/UniformRegistration/UREmployee";
 import { useFrappePostCall, useSWRConfig } from "frappe-react-sdk";
 import React, { createContext, useEffect, useState } from "react";
+import { useAppStore } from "../core/stores/store";
 
-interface Employee {
-  name: string;
-  employee_code: string;
-  full_name: string;
-  employee_type: string;
+// create a interface called Employee that extend UREmployee and UREmployeeType
+interface Employee extends UREmployee {
   title: string;
-  email: string;
-  gender: string;
-  avatar: string;
-  bonus: number;
   budget: number;
 }
 
@@ -29,8 +24,9 @@ export const AuthContext = createContext<AuthContextProps>({
 });
 
 export const AuthProvider = ({ children }: React.PropsWithChildren) => {
-  const [currentUser, setCurrentUser] = useState<string>("");
+  const [currentUser, setCurrentUser] = useState<Employee | null>(null);
   const { mutate } = useSWRConfig();
+
   const { call: login, loading: loadingLogin } = useFrappePostCall(
     "uniform_registration.api.auth.sign_in"
   );
@@ -45,16 +41,19 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     getCurrentUser({ user_id })
       .then((data) => {
         setCurrentUser(data.message[0]);
+        useAppStore.getState().setBudget(data.message[0].budget);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [getCurrentUser]);
 
   const handleLogout = async () => {
     localStorage.removeItem("currentUser");
-    setCurrentUser("");
+    setCurrentUser(null);
+    useAppStore.getState().setBudget(0);
 
+    // await logoutAsAdmin();
     await mutate(() => true, undefined, false);
 
     //Reload the page so that the boot info is fetched again
@@ -68,12 +67,18 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
   const handleLogin = async (username: string, password: string) => {
     return login({ email: username, password })
       .then((data) => {
+        // loginAsAdmin({ username: "Administrator", password: "admin" })
+        // .then(() => {
         setCurrentUser(data.message);
         localStorage.setItem("currentUser", data.message);
         const URL = import.meta.env.VITE_BASE_NAME
           ? `/${import.meta.env.VITE_BASE_NAME}`
           : ``;
         window.location.replace(`${URL}/`);
+      })
+      .catch((error) => {
+        throw error;
+        // });
       })
       .catch((error) => {
         throw error;

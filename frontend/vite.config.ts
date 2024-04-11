@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -5,7 +6,10 @@ import proxyOptions from "./proxyOptions";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), sentryVitePlugin({
+    org: "wellspring-international-bilin",
+    project: "javascript-react"
+  })],
   server: {
     port: 8080,
     proxy: proxyOptions,
@@ -18,7 +22,10 @@ export default defineConfig({
   build: {
     outDir: "../uniform_registration/public/frontend",
     emptyOutDir: true,
-    target: "es2015",
+
     // cssCodeSplit: false,
+    target: "es2015",
+
+    sourcemap: true
   },
 });

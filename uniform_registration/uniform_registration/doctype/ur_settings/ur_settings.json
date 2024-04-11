@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-09 23:14:55.337081",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_currency",
+  "allow_over_budget",
+  "allow_registration"
+ ],
+ "fields": [
+  {
+   "default": "VND",
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_over_budget",
+   "fieldtype": "Check",
+   "label": "Allow Over Budget"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_registration",
+   "fieldtype": "Check",
+   "label": "Allow Registration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-04-10 15:41:09.569611",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "UR Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

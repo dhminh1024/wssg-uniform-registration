@@ -9,7 +9,7 @@ export const ProtectedRoute = () => {
 
   if (isLoading) {
     return <FullPageLoader />;
-  } else if (!currentUser || currentUser === "Guest") {
+  } else if (!currentUser) {
     return <Navigate to="/sign-in" />;
   }
   return <Outlet />;

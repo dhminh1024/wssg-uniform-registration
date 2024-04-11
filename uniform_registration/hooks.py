@@ -1,7 +1,7 @@
 app_name = "uniform_registration"
 app_title = "Uniform Registration"
 app_publisher = "Digital Learning Team"
-app_description = "Wellspring\'s tool for uniform registration based on personal budget"
+app_description = "Wellspring's tool for uniform registration based on personal budget"
 app_email = "digital.learning@wellspringsaigon.edu.vn"
 app_license = "mit"
 app_logo_url = "/assets/uniform_registration/images/wellspring_logo.png"
@@ -35,8 +35,8 @@ web_include_css = "/assets/uniform_registration/css/uniform_registration.css"
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
 website_context = {
-	"favicon": "/assets/uniform_registration/images/wssg_favicon.svg",
-	"splash_image": "/assets/uniform_registration/images/logo_wssg.png",
+    "favicon": "/assets/uniform_registration/images/wssg_favicon.svg",
+    "splash_image": "/assets/uniform_registration/images/logo_wssg.png",
 }
 
 # Svg Icons
@@ -234,7 +234,14 @@ website_context = {
 # }
 
 
-website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},]
+website_route_rules = [
+    {"from_route": "/frontend/<path:app_path>", "to_route": "frontend"},
+]
 export_python_type_annotations = True
 
-fixtures = [{"doctype": "Client Script", "filters": [["module" , "in" , ("Uniform Registration" )]]}]
+fixtures = [
+    {
+        "doctype": "Client Script",
+        "filters": [["module", "in", ("Uniform Registration")]],
+    }
+]

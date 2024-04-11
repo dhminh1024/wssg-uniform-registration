@@ -9,6 +9,7 @@
   "order_id",
   "item_id",
   "item_title",
+  "item_sizes",
   "price",
   "quantity",
   "size",
@@ -38,7 +39,7 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Size",
-   "options": "XS\nS\nM\nL\nXL\nXXL\nXXXL",
+   "options": "NONE\nXS\nS\nM\nL\nXL\nXXL\nXXXL",
    "reqd": 1
   },
   {
@@ -55,8 +56,7 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Item Title",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "item_id",
@@ -70,12 +70,18 @@
    "fieldname": "item_image",
    "fieldtype": "Attach Image",
    "label": "Item Image"
+  },
+  {
+   "fieldname": "item_sizes",
+   "fieldtype": "Data",
+   "label": "Item Sizes",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-03 17:57:23.672752",
+ "modified": "2024-04-10 17:14:36.869957",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Order Item",

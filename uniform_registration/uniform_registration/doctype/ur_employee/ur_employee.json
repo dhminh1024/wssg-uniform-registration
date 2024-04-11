@@ -13,7 +13,8 @@
   "column_break_jsea",
   "email",
   "gender",
-  "avatar"
+  "avatar",
+  "status"
  ],
  "fields": [
   {
@@ -70,12 +71,21 @@
    "fieldtype": "Link",
    "label": "Employee Type",
    "options": "UR Employee Type"
+  },
+  {
+   "default": "None",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "None\nOrdered"
   }
  ],
  "image_field": "avatar",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-05 13:55:53.375061",
+ "modified": "2024-04-08 12:01:04.311884",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Employee",

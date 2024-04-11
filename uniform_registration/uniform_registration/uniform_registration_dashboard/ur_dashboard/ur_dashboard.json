@@ -1,0 +1,24 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "width": "Half"
+  },
+  {
+   "chart": "Item Summary",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-04-10 16:48:38.289672",
+ "dashboard_name": "UR Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-04-10 17:36:02.208922",
+ "modified_by": "Administrator",
+ "module": "Uniform Registration",
+ "name": "UR Dashboard",
+ "owner": "Administrator"
+}
