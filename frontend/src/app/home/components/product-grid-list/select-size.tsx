@@ -11,12 +11,12 @@ import { Size } from "@/types/UniformRegistration/Size";
 export type SelectSizeProps = {
   className?: string;
   sizes: string;
-  size: Size;
-  setSize: (size: Size) => void;
+  size: string;
+  setSize: (size: string) => void;
 };
 
 export const SelectSize: FC<SelectSizeProps> = ({ sizes, size, setSize }) => {
-  const sizeList = sizes ? (sizes.split(",") as Size[]) : [];
+  const sizeList = sizes ? sizes.split(",") : [];
   return (
     <Select value={size} onValueChange={(value) => setSize(value as Size)}>
       <SelectTrigger className="w-[80px]">

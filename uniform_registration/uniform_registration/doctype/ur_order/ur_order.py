@@ -56,12 +56,13 @@ class UROrder(Document):
         else:
             frappe.throw(f"Item not found in order")
 
-    def update_order_item(self, order_item_id, size, quantity, budget):
+    def update_order_item(self, order_item_id, size, quantity, notes, budget):
         order_item = self.get_order_item_by_id(order_item_id)
         same_size_item = self.get_order_item(order_item.item_id, size)
         if order_item:
             order_item.quantity = quantity
             order_item.size = size
+            order_item.notes = notes
 
             self.calculate_total()
             settings = frappe.get_doc("UR Settings")

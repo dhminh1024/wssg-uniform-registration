@@ -18,12 +18,13 @@ class UROrderItem(Document):
 		item_image: DF.AttachImage | None
 		item_sizes: DF.Data
 		item_title: DF.Data
+		notes: DF.LongText | None
 		order_id: DF.Link
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
 		price: DF.Int
 		quantity: DF.Int
-		size: DF.Literal["NONE", "XS", "S", "M", "L", "XL", "XXL", "XXXL"]
+		size: DF.Data
 	# end: auto-generated types
 	pass

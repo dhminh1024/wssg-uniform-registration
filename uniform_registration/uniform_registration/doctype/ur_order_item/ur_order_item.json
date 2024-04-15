@@ -13,7 +13,8 @@
   "price",
   "quantity",
   "size",
-  "item_image"
+  "item_image",
+  "notes"
  ],
  "fields": [
   {
@@ -35,11 +36,10 @@
   },
   {
    "fieldname": "size",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Size",
-   "options": "NONE\nXS\nS\nM\nL\nXL\nXXL\nXXXL",
    "reqd": 1
   },
   {
@@ -76,12 +76,19 @@
    "fieldtype": "Data",
    "label": "Item Sizes",
    "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Long Text",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Notes"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-10 17:14:36.869957",
+ "modified": "2024-04-15 14:16:54.253147",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Order Item",

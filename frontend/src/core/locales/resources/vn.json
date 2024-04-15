@@ -22,7 +22,8 @@
   "Within Budget": "Ngân sách còn lại: {{budgetLeft}}",
   "Out of Budget": "Vượt ngân sách: {{budgetLeft}}",
   "Product List Empty": "Không tìm thấy sản phẩm hoặc ngân sách của bạn không đủ.",
-  "Save": "Lưu",
+  "Save Item": "Lưu sản phẩm",
+  "Delete Item": "Xóa sản phẩm",
   "Uniform Registration": "Đăng ký đồng phục 2024",
   "Your cart is empty": "Giỏ hàng của bạn đang trống",
   "Invalid Employee Code": "Mã nhân viên không hợp lệ",
@@ -34,5 +35,7 @@
   "Instructions": "Hướng dẫn",
   "Instructions Step 1": "Chọn số lượng và kích cớ sản phẩm bạn muốn đặt → Nhấn nút Đặt hàng",
   "Instructions Step 2": "Tổng giá trị đơn hàng không được vượt quá ngân sách của bạn",
-  "Instructions Step 3": "Bạn có thể quay lại chỉnh sửa giỏ hàng bất cứ lúc nào → Nhấn nút"
+  "Instructions Step 3": "Bạn có thể quay lại chỉnh sửa giỏ hàng bất cứ lúc nào → Nhấn nút",
+  "Notes": "Ghi chú",
+  "Type your notes here": "Nhập ghi chú của bạn ở đây"
 }

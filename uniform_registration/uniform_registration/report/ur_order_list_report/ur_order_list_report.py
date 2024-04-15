@@ -22,6 +22,7 @@ def get_columns(filters):
         _("Item ID") + ":Link/UR Item:80",
         _("Item Title") + "::240",
         _("Size") + "::60",
+        _("Notes") + "::80",
         _("Quantity") + "::80",
         _("Item Price") + ":Currency:120",
         _("Total Price") + ":Currency:120",
@@ -49,6 +50,7 @@ def get_data(filters):
             `tabUR Order Item`.item_id AS item_id,
             `tabUR Order Item`.item_title AS item_title,
             `tabUR Order Item`.size AS size,
+            `tabUR Order Item`.notes AS notes,
             `tabUR Order Item`.quantity AS quantity,
             `tabUR Order Item`.price AS price,
             (`tabUR Order Item`.quantity * `tabUR Order Item`.price) AS total_price

@@ -2,6 +2,7 @@ import { UREmployee } from "@/types/UniformRegistration/UREmployee";
 import { useFrappePostCall, useSWRConfig } from "frappe-react-sdk";
 import React, { createContext, useEffect, useState } from "react";
 import { useAppStore } from "../core/stores/store";
+import { BASE_URL } from "@/app/config";
 
 // create a interface called Employee that extend UREmployee and UREmployeeType
 interface Employee extends UREmployee {
@@ -60,7 +61,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     const URL = import.meta.env.VITE_BASE_NAME
       ? `${import.meta.env.VITE_BASE_NAME}`
       : ``;
-    window.location.replace(`/sign-in?redirect-to=${URL}`);
+    window.location.replace(`${BASE_URL}/sign-in?redirect-to=${URL}`);
     // window.location.reload()
   };
 
@@ -71,10 +72,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
         // .then(() => {
         setCurrentUser(data.message);
         localStorage.setItem("currentUser", data.message);
-        const URL = import.meta.env.VITE_BASE_NAME
-          ? `/${import.meta.env.VITE_BASE_NAME}`
-          : ``;
-        window.location.replace(`${URL}/`);
+
+        window.location.replace(`${BASE_URL}/`);
       })
       .catch((error) => {
         throw error;

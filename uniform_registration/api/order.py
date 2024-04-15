@@ -37,7 +37,7 @@ def delete_order_item(employee_id, order_item_id):
 
 
 @frappe.whitelist()
-def update_order_item(employee_id, order_item_id, size, quantity):
+def update_order_item(employee_id, order_item_id, size, quantity, notes):
     check_allow_registration()
 
     order = frappe.get_all(
@@ -47,7 +47,7 @@ def update_order_item(employee_id, order_item_id, size, quantity):
     if order and len(order) == 1:
         budget = get_employee_budget(employee_id)
         order = frappe.get_doc("UR Order", order[0].name)
-        return order.update_order_item(order_item_id, size, quantity, budget)
+        return order.update_order_item(order_item_id, size, quantity, notes, budget)
     else:
         frappe.throw("Order not found")
 

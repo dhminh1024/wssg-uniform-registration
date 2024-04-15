@@ -22,8 +22,10 @@ export interface UROrderItem{
 	price: number
 	/**	Quantity : Int	*/
 	quantity: number
-	/**	Size : Select	*/
-	size: "NONE" | "XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL"
+	/**	Size : Data	*/
+	size: string
 	/**	Item Image : Attach Image	*/
 	item_image?: string
+	/**	Notes : Long Text	*/
+	notes?: string
 }

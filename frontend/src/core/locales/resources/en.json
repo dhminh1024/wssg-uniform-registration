@@ -21,7 +21,8 @@
   "Within Budget": "Within budget! {{budgetLeft}} left",
   "Out of Budget": "Out of budget: {{budgetLeft}}",
   "Product List Empty": "No products found or your budget is not enough.",
-  "Save": "Save",
+  "Save Item": "Save Item",
+  "Delete Item": "Delete Item",
   "Uniform Registration": "WSSG Uniform Registration 2024",
   "Your cart is empty": "Your cart is empty",
   "Invalid Employee Code": "Invalid Employee Code",
@@ -35,5 +36,7 @@
   "Instructions": "Instructions",
   "Instructions Step 1": "Select the quantity and size of the product you want to order → Press the Order button",
   "Instructions Step 2": "The total order value must not exceed your budget",
-  "Instructions Step 3": "You can go back to edit your cart at any time → Press the button"
+  "Instructions Step 3": "You can go back to edit your cart at any time → Press the button",
+  "Notes": "Notes",
+  "Type your notes here": "Type your notes here"
 }
