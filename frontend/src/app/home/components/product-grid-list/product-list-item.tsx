@@ -9,10 +9,8 @@ import { useFrappePostCall, useSWRConfig } from "frappe-react-sdk";
 import { useToast } from "@/components/ui/use-toast";
 import { getServerErrors } from "@/lib/format/error-server-message";
 import { URItem } from "@/types/UniformRegistration/URItem";
-// import Trans from "@/components/trans";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { SelectSize } from "./select-size";
-import { Size } from "@/types/UniformRegistration/Size";
 import { SettingsContext } from "@/context/settings-provider";
 
 export type ProductListItemProps = {
@@ -21,8 +19,8 @@ export type ProductListItemProps = {
 
 export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState<Size>(
-    product.sizes.split(",")[0].toUpperCase() as Size
+  const [size, setSize] = useState<string>(
+    product.sizes.split(",")[0].toUpperCase()
   );
   const { currentUser } = useContext(AuthContext);
   const { allowRegistration } = useContext(SettingsContext);

@@ -6,5 +6,5 @@ tags
 node_modules
 __pycache__
 
-uniform_registration/public/frontend
-uniform_registration/www/frontend.html
+uniform_registration/public/uniform
+uniform_registration/www/uniform.html

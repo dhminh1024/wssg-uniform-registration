@@ -1,3 +1,4 @@
+import { ASSET_URL } from "@/app/config";
 import { type FC } from "react";
 
 export type LogoProps = {
@@ -10,7 +11,7 @@ export const Logo: FC<LogoProps> = ({ className }) => {
       alt="Wellspring"
       className={className}
       // src={"/static/logo/ws-logo-full.png"}
-      src={"/assets/uniform_registration/frontend/ws-logo-full.png"}
+      src={`${ASSET_URL}/ws-logo-full.png`}
     />
   );
 };

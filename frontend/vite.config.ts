@@ -6,10 +6,13 @@ import proxyOptions from "./proxyOptions";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), sentryVitePlugin({
-    org: "wellspring-international-bilin",
-    project: "javascript-react"
-  })],
+  plugins: [
+    react(),
+    sentryVitePlugin({
+      org: "wellspring-international-bilin",
+      project: "javascript-react",
+    }),
+  ],
   server: {
     port: 8080,
     proxy: proxyOptions,
@@ -20,12 +23,12 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../uniform_registration/public/frontend",
+    outDir: "../uniform_registration/public/uniform",
     emptyOutDir: true,
 
     // cssCodeSplit: false,
     target: "es2015",
 
-    sourcemap: true
+    sourcemap: true,
   },
 });

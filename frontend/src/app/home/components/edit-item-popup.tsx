@@ -1,12 +1,8 @@
 import { useContext, type FC, useState } from "react";
-import { EditIcon, Trash2Icon } from "lucide-react";
+import { EditIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useFrappePostCall, useSWRConfig } from "frappe-react-sdk";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { getServerErrors } from "@/lib/format/error-server-message";
