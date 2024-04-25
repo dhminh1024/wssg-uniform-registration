@@ -1,5 +1,9 @@
 {
- "cards": [],
+ "cards": [
+  {
+   "card": "% Employee Ordered"
+  }
+ ],
  "charts": [
   {
    "width": "Half"
@@ -16,7 +20,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2024-04-10 17:36:02.208922",
+ "modified": "2024-04-22 12:05:58.476276",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Dashboard",

@@ -11,7 +11,7 @@ export interface UREmployeeType{
 	parenttype?: string
 	idx?: number
 	/**	Title : Data	*/
-	title?: string
+	title: string
 	/**	Budget : Int	*/
 	budget: number
 }

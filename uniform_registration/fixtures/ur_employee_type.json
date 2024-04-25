@@ -1,82 +1,82 @@
 [
  {
-  "budget": 3000000,
+  "budget": 700000,
   "docstatus": 0,
   "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.257628",
-  "name": 27,
-  "title": "Staff"
- },
- {
-  "budget": 3000000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.295653",
-  "name": 28,
-  "title": "Teacher"
- },
- {
-  "budget": 35000000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.299382",
-  "name": 29,
-  "title": "Admission & Customer Service"
- },
- {
-  "budget": 1200000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.302895",
-  "name": 30,
-  "title": "Medical Service"
- },
- {
-  "budget": 1000000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.306513",
-  "name": 31,
-  "title": "Facility"
- },
- {
-  "budget": 1000000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.309954",
-  "name": 32,
-  "title": "Driver"
- },
- {
-  "budget": 500000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.313566",
-  "name": 33,
-  "title": "Security"
- },
- {
-  "budget": 500000,
-  "docstatus": 0,
-  "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.316714",
-  "name": 34,
-  "title": "Kitchen"
+  "modified": "2024-04-25 17:14:51.052588",
+  "name": "b4e0b240fd",
+  "title": "Tea Ladies"
  },
  {
   "budget": 4000000,
   "docstatus": 0,
   "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:13:05.319695",
-  "name": 35,
+  "modified": "2024-04-25 17:14:51.063906",
+  "name": "f1d4348cac",
   "title": "Manager"
  },
  {
-  "budget": 700000,
+  "budget": 500000,
   "docstatus": 0,
   "doctype": "UR Employee Type",
-  "modified": "2024-04-11 15:20:28.661629",
-  "name": 36,
-  "title": "Tea Ladies"
+  "modified": "2024-04-25 17:14:51.069508",
+  "name": "fef9d3cf9a",
+  "title": "Kitchen"
+ },
+ {
+  "budget": 500000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.074362",
+  "name": "a341a789ac",
+  "title": "Security"
+ },
+ {
+  "budget": 1000000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.079792",
+  "name": "6add77916b",
+  "title": "Driver"
+ },
+ {
+  "budget": 1000000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.084573",
+  "name": "5a90c951a9",
+  "title": "Facility"
+ },
+ {
+  "budget": 1200000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.089540",
+  "name": "574b64e306",
+  "title": "Medical Service"
+ },
+ {
+  "budget": 35000000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.094726",
+  "name": "481a273ccc",
+  "title": "Admission & Customer Service"
+ },
+ {
+  "budget": 3000000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.101695",
+  "name": "e6e74d5230",
+  "title": "Teacher"
+ },
+ {
+  "budget": 3000000,
+  "docstatus": 0,
+  "doctype": "UR Employee Type",
+  "modified": "2024-04-25 17:14:51.106927",
+  "name": "e307ab6801",
+  "title": "Staff"
  }
 ]
