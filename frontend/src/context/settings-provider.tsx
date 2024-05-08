@@ -5,11 +5,13 @@ import React, { createContext } from "react";
 interface SettingsContextProps {
   allowOverBudget?: 0 | 1;
   allowRegistration?: 0 | 1;
+  tailorMadePrice?: number;
 }
 
 export const SettingsContext = createContext<SettingsContextProps>({
   allowOverBudget: 0,
   allowRegistration: 1,
+  tailorMadePrice: 0,
 });
 
 export const SettingsProvider: React.FC<React.PropsWithChildren> = ({
@@ -22,9 +24,8 @@ export const SettingsProvider: React.FC<React.PropsWithChildren> = ({
   const settings = {
     allowOverBudget: data?.message.allow_over_budget,
     allowRegistration: data?.message.allow_registration,
+    tailorMadePrice: data?.message.tailor_made_price,
   };
-
-  console.log(data);
 
   return (
     <SettingsContext.Provider value={settings}>

@@ -7,7 +7,8 @@
  "field_order": [
   "default_currency",
   "allow_over_budget",
-  "allow_registration"
+  "allow_registration",
+  "tailor_made_price"
  ],
  "fields": [
   {
@@ -28,12 +29,21 @@
    "fieldname": "allow_registration",
    "fieldtype": "Check",
    "label": "Allow Registration"
+  },
+  {
+   "default": "0",
+   "fieldname": "tailor_made_price",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tailor Made Price",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-04-22 11:22:27.981139",
+ "modified": "2024-05-06 17:55:11.320040",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Settings",

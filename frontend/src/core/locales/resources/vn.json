@@ -10,6 +10,8 @@
   "Filter products": "Tìm sản phẩm...",
   "Quantity": "Số lượng",
   "Size": "Kích cỡ",
+  "Tailor": "May đo",
+  "TailorPriceNotice": "Sản phẩm may đo có phụ thu thêm {{price}}",
   "Total Price": "Tổng giá trị",
   "Order": "Đặt hàng",
   "Budget": "Ngân sách",
@@ -20,7 +22,7 @@
   "Sign In": "Đăng nhập",
   "uniformRegistration": "Đăng ký đồng phục 2024",
   "Within Budget": "Ngân sách còn lại: {{budgetLeft}}",
-  "Out of Budget": "Vượt ngân sách: {{budgetLeft}}",
+  "Out of Budget": "Vượt ngân sách! Bạn sẽ cần thanh toán: {{toPay}}.",
   "Product List Empty": "Không tìm thấy sản phẩm hoặc ngân sách của bạn không đủ.",
   "Save Item": "Lưu sản phẩm",
   "Delete Item": "Xóa sản phẩm",
@@ -35,7 +37,7 @@
   "Instructions": "Hướng dẫn",
   "Instructions Step 1": "Chọn số lượng và kích cớ sản phẩm bạn muốn đặt → Nhấn nút Đặt hàng",
   "Instructions Step 2": "Tổng giá trị đơn hàng không được vượt quá ngân sách của bạn",
-  "Instructions Step 3": "Bạn có thể quay lại chỉnh sửa giỏ hàng bất cứ lúc nào → Nhấn nút",
+  "Instructions Step 3": "Bạn có thể quay lại chỉnh sửa giỏ hàng → Nhấn nút",
   "Notes": "Ghi chú",
   "Type your notes here": "Nhập ghi chú của bạn ở đây"
 }

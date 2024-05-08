@@ -14,12 +14,15 @@ class URItem(Document):
 
 	if TYPE_CHECKING:
 		from frappe.types import DF
+		from uniform_registration.uniform_registration.doctype.ur_assign_item_type.ur_assign_item_type import URAssignItemType
 
 		description: DF.Text | None
+		employee_types: DF.TableMultiSelect[URAssignItemType]
 		gender: DF.Literal["Male", "Female", "All"]
 		item_image: DF.AttachImage | None
 		price: DF.Int
 		sizes: DF.Data
 		title: DF.Data
+		title_en: DF.Data
 	# end: auto-generated types
 	pass

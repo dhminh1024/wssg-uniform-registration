@@ -12,6 +12,7 @@ import { URItem } from "@/types/UniformRegistration/URItem";
 import { useTranslation } from "react-i18next";
 import { SelectSize } from "./select-size";
 import { SettingsContext } from "@/context/settings-provider";
+import { transAttribute } from "@/lib/format/trans-attribute";
 
 export type ProductListItemProps = {
   product: URItem;
@@ -30,17 +31,15 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
   );
   const { mutate } = useSWRConfig();
   const { toast } = useToast();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language;
 
   const handleAddToCart = () => {
     call({
       employee_id: currentUser?.name,
       product_id: product.name,
-      product_title: product.title,
-      price: product.price,
       quantity: quantity,
       size: size,
-      sizes: product.sizes,
     })
       .then((data) => {
         toast({
@@ -74,7 +73,7 @@ export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
       </div>
       <div className="flex justify-between items-center mt-6">
         <p className="pointer-events-none block truncate text-lg font-medium text-gray-900">
-          {product.title}
+          {transAttribute(lng, product.title, product.title_en)}
         </p>
         <Badge
           variant="secondary"

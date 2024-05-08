@@ -16,6 +16,8 @@ export interface UROrderItem{
 	item_id: string
 	/**	Item Title : Data	*/
 	item_title: string
+	/**	Item Title EN : Data	*/
+	item_title_en: string
 	/**	Item Sizes : Data	*/
 	item_sizes: string
 	/**	Price : Int	*/

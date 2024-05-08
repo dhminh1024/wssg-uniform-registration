@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useContext, type FC, useState, useEffect } from "react";
+import { useContext, type FC, useState } from "react";
 import { useFrappeGetCall } from "frappe-react-sdk";
 import { FullPageLoader } from "@/components/state/full-page-loader";
 import { ErrorBanner } from "@/components/state/error-banner";
@@ -26,36 +26,38 @@ import { useAppStore } from "@/core/stores/store";
 import { Trans } from "react-i18next";
 import { useTranslation } from "react-i18next";
 import { EditItemPopup } from "./edit-item-popup";
+import { transAttribute } from "@/lib/format/trans-attribute";
+import { SettingsContext } from "@/context/settings-provider";
 
 export const CartCard: FC = () => {
   const { currentUser } = useContext(AuthContext);
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { language: lng },
+  } = useTranslation();
   const budgetLeft = useAppStore((state) => state.budgetLeft);
   const totalPrice = useAppStore((state) => state.orderTotalPrice);
   const setOrderTotalPrice = useAppStore((state) => state.setOrderTotalPrice);
   const [shoppingCart, setShoppingCart] = useState<UROrderItem[]>([]);
 
-  const {
-    data: order,
-    error,
-    isLoading,
-    isValidating,
-  } = useFrappeGetCall<{ message: UROrder }>(
+  const { tailorMadePrice } = useContext(SettingsContext);
+
+  const { error, isLoading, isValidating } = useFrappeGetCall<{
+    message: UROrder;
+  }>(
     "uniform_registration.api.order.get_employee_order",
     {
       employee_id: currentUser?.name,
     },
     `get_order_for_employee_${currentUser?.name}`,
-    { revalidateOnMount: true }
+    {
+      revalidateOnMount: true,
+      onSuccess: (data) => {
+        setOrderTotalPrice(data.message.total_price);
+        setShoppingCart(data.message.shopping_cart);
+      },
+    }
   );
-
-  useEffect(() => {
-    if (!order) return;
-    if (order.message?.shopping_cart)
-      setShoppingCart(order.message?.shopping_cart);
-    if (order.message?.total_price)
-      setOrderTotalPrice(order.message?.total_price);
-  }, [order, setOrderTotalPrice]);
 
   if (isLoading) return <FullPageLoader />;
   if (error) return <ErrorBanner error={error} />;
@@ -84,8 +86,11 @@ export const CartCard: FC = () => {
                       <Loader />
                     ) : (
                       <EditItemPopup
+                        key={item.name}
                         product={item}
                         employeeId={currentUser?.name}
+                        isLoading={isLoading}
+                        isValidating={isValidating}
                       />
                     )}
                   </div>
@@ -95,8 +100,17 @@ export const CartCard: FC = () => {
                   </Avatar>
                   <div>
                     <p className="text-base font-medium leading-none">
-                      {item.quantity} x {item.item_title} ({item.size})
+                      {item.quantity} x{" "}
+                      {transAttribute(lng, item.item_title, item.item_title_en)}{" "}
+                      ({t(item.size)})
                     </p>
+                    {item.size.toLowerCase() === "tailor" && (
+                      <span className="text-sm text-foreground">
+                        {t("TailorPriceNotice", {
+                          price: fCurrency(Number(tailorMadePrice)),
+                        })}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="text-sm leading-none">
@@ -136,6 +150,7 @@ export const CartCard: FC = () => {
                   i18nKey={"Out of Budget"}
                   values={{
                     budgetLeft: fCurrency(Number(budgetLeft)),
+                    toPay: fCurrency(Number(budgetLeft) * -1),
                   }}
                   components={{ b: <b /> }}
                 />

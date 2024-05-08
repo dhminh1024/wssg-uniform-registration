@@ -3,7 +3,7 @@ from .utils import check_allow_registration
 
 
 @frappe.whitelist()
-def add_to_order(employee_id, product_id, product_title, price, quantity, size, sizes):
+def add_to_order(employee_id, product_id, quantity, size):
     check_allow_registration()
 
     order = frappe.get_all(
@@ -18,7 +18,21 @@ def add_to_order(employee_id, product_id, product_title, price, quantity, size, 
         order.insert()
 
     budget = get_employee_budget(employee_id)
-    order.add_to_order(product_id, product_title, price, quantity, size, sizes, budget)
+    product = frappe.get_doc("UR Item", product_id)
+    settings = frappe.get_doc("UR Settings")
+    tailor_made_price = settings.tailor_made_price
+
+    order.add_to_order(
+        product_id,
+        product.title,
+        product.title_en,
+        product.price,
+        quantity,
+        size,
+        product.sizes,
+        budget,
+        tailor_made_price,
+    )
     return f"Added {quantity} items to order"
 
 
@@ -38,7 +52,7 @@ def delete_order_item(employee_id, order_item_id):
 
 @frappe.whitelist()
 def update_order_item(employee_id, order_item_id, size, quantity, notes):
-    check_allow_registration()
+    # check_allow_registration()
 
     order = frappe.get_all(
         "UR Order", filters={"employee_id": employee_id}, fields=["name"]

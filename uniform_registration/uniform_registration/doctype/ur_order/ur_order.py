@@ -23,7 +23,16 @@ class UROrder(Document):
 
     # end: auto-generated types
     def add_to_order(
-        self, product_id, product_title, price, quantity, size, sizes, budget
+        self,
+        product_id,
+        product_title,
+        product_title_en,
+        price,
+        quantity,
+        size,
+        sizes,
+        budget,
+        tailor_made_price,
     ):
         order_item = self.get_order_item(product_id, size)
         if order_item:
@@ -33,10 +42,13 @@ class UROrder(Document):
             order_item.order_id = self.name
             order_item.item_id = product_id
             order_item.item_title = product_title
+            order_item.item_title_en = product_title_en
             order_item.item_sizes = sizes
-            order_item.price = price
             order_item.quantity = quantity
             order_item.size = size
+            order_item.price = (
+                price if size.lower() != "tailor" else price + tailor_made_price
+            )
 
         self.calculate_total()
         settings = frappe.get_doc("UR Settings")
@@ -60,8 +72,13 @@ class UROrder(Document):
         order_item = self.get_order_item_by_id(order_item_id)
         same_size_item = self.get_order_item(order_item.item_id, size)
         if order_item:
-            order_item.quantity = quantity
+            settings = frappe.get_doc("UR Settings")
+            if order_item.size.lower() == "tailor" and size.lower() != "tailor":
+                order_item.price -= settings.tailor_made_price
+            if order_item.size.lower() != "tailor" and size.lower() == "tailor":
+                order_item.price += settings.tailor_made_price
             order_item.size = size
+            order_item.quantity = quantity
             order_item.notes = notes
 
             self.calculate_total()
@@ -73,6 +90,8 @@ class UROrder(Document):
                 order_item.save()
             else:
                 same_size_item.quantity += quantity
+                if same_size_item.notes and notes:
+                    same_size_item.notes += notes
                 self.shopping_cart.remove(order_item)
                 order_item.delete()
 

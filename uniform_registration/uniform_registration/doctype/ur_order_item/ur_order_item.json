@@ -9,6 +9,7 @@
   "order_id",
   "item_id",
   "item_title",
+  "item_title_en",
   "item_sizes",
   "price",
   "quantity",
@@ -83,12 +84,21 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Notes"
+  },
+  {
+   "fieldname": "item_title_en",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Title EN",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-15 14:16:54.253147",
+ "modified": "2024-05-08 10:01:26.920283",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Order Item",

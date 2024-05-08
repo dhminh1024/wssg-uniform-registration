@@ -17,8 +17,8 @@ export const usePasswordSignIn = () => {
   const form = useForm<z.infer<typeof validationSchema>>({
     resolver: zodResolver(validationSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: "minh.do@wellspringsaigon.edu.vn",
+      password: "W00919",
     },
   });
 

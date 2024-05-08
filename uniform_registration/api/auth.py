@@ -31,6 +31,7 @@ def get_current_user(user_id):
             employee.gender,
             employee.avatar,
             employee.bonus,
+            employee_type.name.as_("employee_type_id"),
             employee_type.title,
             employee_type.budget,
         )

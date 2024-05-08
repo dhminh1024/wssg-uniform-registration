@@ -16,4 +16,6 @@ export interface URSettings{
 	allow_over_budget?: 0 | 1
 	/**	Allow Registration : Check	*/
 	allow_registration?: 0 | 1
+	/**	Tailor Made Price : Float	*/
+	tailor_made_price: number
 }

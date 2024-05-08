@@ -5,7 +5,8 @@ import { useAppStore } from "../core/stores/store";
 import { BASE_URL } from "@/app/config";
 
 // create a interface called Employee that extend UREmployee and UREmployeeType
-interface Employee extends UREmployee {
+export interface Employee extends UREmployee {
+  employee_type_id: string;
   title: string;
   budget: number;
 }

@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class UROrderItem(Document):
+class URAssignItemType(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,18 +14,9 @@ class UROrderItem(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		item_id: DF.Link
-		item_image: DF.AttachImage | None
-		item_sizes: DF.Data
-		item_title: DF.Data
-		item_title_en: DF.Data
-		notes: DF.LongText | None
-		order_id: DF.Link
+		employee_type_id: DF.Link
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
-		price: DF.Int
-		quantity: DF.Int
-		size: DF.Data
 	# end: auto-generated types
 	pass

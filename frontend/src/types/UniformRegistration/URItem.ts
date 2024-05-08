@@ -1,3 +1,4 @@
+import { URAssignItemType } from './URAssignItemType'
 
 export interface URItem{
 	creation: string
@@ -12,6 +13,8 @@ export interface URItem{
 	idx?: number
 	/**	Title : Data	*/
 	title: string
+	/**	Title EN : Data	*/
+	title_en: string
 	/**	Description : Text	*/
 	description?: string
 	/**	Price : Int	*/
@@ -22,4 +25,6 @@ export interface URItem{
 	gender?: "Male" | "Female" | "All"
 	/**	Item Image : Attach Image	*/
 	item_image?: string
+	/**	Employee Types : Table MultiSelect - UR Assign Item Type	*/
+	employee_types?: URAssignItemType[]
 }
