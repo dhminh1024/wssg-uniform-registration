@@ -53,8 +53,13 @@ export const CartCard: FC = () => {
     {
       revalidateOnMount: true,
       onSuccess: (data) => {
-        setOrderTotalPrice(data.message.total_price);
-        setShoppingCart(data.message.shopping_cart);
+        if (data.message) {
+          setOrderTotalPrice(data.message.total_price);
+          setShoppingCart(data.message.shopping_cart);
+        } else {
+          setOrderTotalPrice(0);
+          setShoppingCart([]);
+        }
       },
     }
   );
