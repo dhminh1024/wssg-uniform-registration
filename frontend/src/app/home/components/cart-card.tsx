@@ -109,13 +109,13 @@ export const CartCard: FC = () => {
                       {transAttribute(lng, item.item_title, item.item_title_en)}{" "}
                       ({t(item.size)})
                     </p>
-                    {item.size.toLowerCase() === "tailor" && (
+                    {/* {item.size.toLowerCase() === "tailor" && (
                       <span className="text-sm text-foreground">
                         {t("TailorPriceNotice", {
                           price: fCurrency(Number(tailorMadePrice)),
                         })}
                       </span>
-                    )}
+                    )} */}
                   </div>
                 </div>
                 <div className="text-sm leading-none">

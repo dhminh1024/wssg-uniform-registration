@@ -56,6 +56,7 @@ class UROrder(Document):
             frappe.throw("You have exceeded your budget")
 
         order_item.save()
+        self.save()
 
     def remove_from_order(self, order_item_id):
         order_item = self.get_order_item_by_id(order_item_id)
@@ -116,4 +117,7 @@ class UROrder(Document):
         self.total_price = sum(
             [item.quantity * item.price for item in self.shopping_cart]
         )
-        self.save()
+        # self.save()
+
+    def before_save(self):
+        self.calculate_total()
