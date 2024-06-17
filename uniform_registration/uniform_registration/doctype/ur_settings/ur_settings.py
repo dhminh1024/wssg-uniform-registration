@@ -17,6 +17,7 @@ class URSettings(Document):
 		allow_over_budget: DF.Check
 		allow_registration: DF.Check
 		default_currency: DF.Link | None
+		over_budget_discount: DF.Float
 		tailor_made_price: DF.Float
 	# end: auto-generated types
 	pass

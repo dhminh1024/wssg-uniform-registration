@@ -8,7 +8,8 @@
   "default_currency",
   "allow_over_budget",
   "allow_registration",
-  "tailor_made_price"
+  "tailor_made_price",
+  "over_budget_discount"
  ],
  "fields": [
   {
@@ -38,12 +39,20 @@
    "label": "Tailor Made Price",
    "non_negative": 1,
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "over_budget_discount",
+   "fieldtype": "Float",
+   "label": "Over Budget Discount",
+   "non_negative": 1,
+   "precision": "2"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-05-06 17:55:11.320040",
+ "modified": "2024-06-17 10:07:01.187248",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Settings",
