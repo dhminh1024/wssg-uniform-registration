@@ -20,9 +20,7 @@ export type ProductListItemProps = {
 
 export const ProductListItem: FC<ProductListItemProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
-  const [size, setSize] = useState<string>(
-    product.sizes.split(",")[0].toUpperCase()
-  );
+  const [size, setSize] = useState<string>(product.sizes.split(",")[0]);
   const { currentUser } = useContext(AuthContext);
   const { allowRegistration } = useContext(SettingsContext);
 

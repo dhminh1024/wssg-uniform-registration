@@ -107,7 +107,7 @@ export const CartCard: FC = () => {
                     <p className="text-base font-medium leading-none">
                       {item.quantity} x{" "}
                       {transAttribute(lng, item.item_title, item.item_title_en)}{" "}
-                      ({t(item.size)})
+                      ({t(item.size.toUpperCase())})
                     </p>
                     {/* {item.size.toLowerCase() === "tailor" && (
                       <span className="text-sm text-foreground">
