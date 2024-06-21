@@ -10,7 +10,7 @@
   "Filter products": "Filter products...",
   "Quantity": "Quantity",
   "Size": "Size",
-  "Tailor": "Tailor-made",
+  "TAILOR": "Tailor-made",
   "TailorPriceNotice": "Tailor-made products will be charged an additional fee of {{price}}",
   "Total Price": "Total Price",
   "Order": "Order",
@@ -21,7 +21,8 @@
   "Sign Out": "Sign Out",
   "Sign In": "Sign In",
   "Within Budget": "Within budget! {{budgetLeft}} left",
-  "Out of Budget": "Out of budget! You will need to pay: {{toPay}}.",
+  "Out of Budget": "Out of budget: {{budgetLeft}} <br/> You will need to pay: {{toPay}}",
+  "Show Discount": "(The school supports: {{discount}})",
   "Product List Empty": "No products found or your budget is not enough.",
   "Save Item": "Save Item",
   "Delete Item": "Delete Item",
@@ -39,6 +40,7 @@
   "Instructions Step 1": "Select the quantity and size of the product you want to order → Press the Order button",
   "Instructions Step 2": "The total order value must not exceed your budget",
   "Instructions Step 3": "You can go back to edit your cart at any time → Press the button",
+  "Instructions Step 4": "The school supports {{discount}} value of the order if you register over the budget",
   "Notes": "Notes",
   "Type your notes here": "Type your notes here"
 }

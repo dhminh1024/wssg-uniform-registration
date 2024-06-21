@@ -37,7 +37,7 @@ export const SelectSize: FC<SelectSizeProps> = ({
       <SelectContent>
         {sizeList.map((size) => (
           <SelectItem key={size} value={size}>
-            {t(size)}
+            {t(size.toUpperCase())}
           </SelectItem>
         ))}
       </SelectContent>

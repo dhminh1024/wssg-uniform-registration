@@ -24,6 +24,7 @@ def get_columns(filters):
         _("Budget") + ":Currency:120",
         _("Total Order") + ":Currency:120",
         _("Over Budget") + ":Currency:120",
+        _("After Discount") + ":Currency:120",
     ]
 
 
@@ -34,7 +35,10 @@ def get_conditions(filters):
 
 
 def get_data(filters):
-    '''List of employee who ordered over budget order by type and full name of employee'''
+    """List of employee who ordered over budget order by type and full name of employee"""
+    settings = frappe.get_doc("UR Settings")
+    over_budget_discount = settings.over_budget_discount
+    discount = 1 - over_budget_discount / 100
     data = frappe.db.sql(
         f"""
         SELECT 
@@ -46,7 +50,8 @@ def get_data(filters):
             `tabUR Order`.name AS order_id,
             `tabUR Employee Type`.budget AS budget,
             `tabUR Order`.total_price AS total_price,
-            (`tabUR Order`.total_price - `tabUR Employee Type`.budget) AS over_budget
+            (`tabUR Order`.total_price - `tabUR Employee Type`.budget) AS over_budget,
+            (`tabUR Order`.total_price - `tabUR Employee Type`.budget) * {discount} AS after_discount
         FROM 
             `tabUR Order`
         LEFT JOIN

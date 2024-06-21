@@ -14,7 +14,7 @@ import { AuthContext } from "@/context/auth-provider";
 
 import isEmpty from "lodash/isEmpty";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { fCurrency } from "@/lib/format/format-number";
+import { fCurrency, fPercent } from "@/lib/format/format-number";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { UROrderItem } from "@/types/UniformRegistration/UROrderItem";
@@ -40,7 +40,7 @@ export const CartCard: FC = () => {
   const setOrderTotalPrice = useAppStore((state) => state.setOrderTotalPrice);
   const [shoppingCart, setShoppingCart] = useState<UROrderItem[]>([]);
 
-  const { tailorMadePrice } = useContext(SettingsContext);
+  const { tailorMadePrice, overBudgetDiscount } = useContext(SettingsContext);
 
   const { error, isLoading, isValidating } = useFrappeGetCall<{
     message: UROrder;
@@ -107,7 +107,7 @@ export const CartCard: FC = () => {
                     <p className="text-base font-medium leading-none">
                       {item.quantity} x{" "}
                       {transAttribute(lng, item.item_title, item.item_title_en)}{" "}
-                      ({t(item.size)})
+                      ({t(item.size.toUpperCase())})
                     </p>
                     {/* {item.size.toLowerCase() === "tailor" && (
                       <span className="text-sm text-foreground">
@@ -135,7 +135,7 @@ export const CartCard: FC = () => {
           <div className="flex justify-end">
             <span
               className={cn(
-                "text-base font-medium leading-none",
+                "text-base font-medium text-right",
                 budgetLeft > 0 ? "text-green-500" : "text-red-500"
               )}
             >
@@ -151,14 +151,31 @@ export const CartCard: FC = () => {
                   components={{ b: <b /> }}
                 />
               ) : (
-                <Trans
-                  i18nKey={"Out of Budget"}
-                  values={{
-                    budgetLeft: fCurrency(Number(budgetLeft)),
-                    toPay: fCurrency(Number(budgetLeft) * -1),
-                  }}
-                  components={{ b: <b /> }}
-                />
+                <>
+                  <Trans
+                    i18nKey={"Out of Budget"}
+                    className="flex justify-end"
+                    values={{
+                      budgetLeft: fCurrency(-Number(budgetLeft)),
+                      toPay: fCurrency(
+                        -Number(budgetLeft) *
+                          (1 - Number(overBudgetDiscount) / 100)
+                      ),
+                    }}
+                    components={{ p: <p /> }}
+                  />
+                  <br />
+                  {Number(overBudgetDiscount) > 0 && (
+                    <Trans
+                      i18nKey={"Show Discount"}
+                      className="flex justify-end"
+                      values={{
+                        discount: fPercent(Number(overBudgetDiscount)),
+                      }}
+                      components={{ p: <p /> }}
+                    />
+                  )}
+                </>
               )}
             </span>
           </div>
