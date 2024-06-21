@@ -40,7 +40,7 @@ export const Instructions: FC<InstructionsProps> = () => {
               {t("Registration has been disabled")}
             </li>
           )}
-          {allowOverBudget && Number(overBudgetDiscount) > 0 && (
+          {allowOverBudget && Number(overBudgetDiscount) > 0 ? (
             <li className="text-sm">
               <Trans
                 i18nKey={"Instructions Step 4"}
@@ -50,7 +50,7 @@ export const Instructions: FC<InstructionsProps> = () => {
                 components={{ p: <p /> }}
               />
             </li>
-          )}
+          ) : null}
         </ul>
       </CardContent>
     </Card>
