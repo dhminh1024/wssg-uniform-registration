@@ -11,9 +11,17 @@ import { useAppStore } from "@/core/stores/store";
 import { useTranslation } from "react-i18next";
 
 const getFirstLettersInFullName = (fullName: string | undefined) => {
-  if (!fullName) return "";
-  const [firstName, lastName] = fullName.split(" ");
-  return `${firstName.charAt(0)}${lastName.charAt(0)}`;
+  if (!fullName) return "W";
+
+  try {
+    const result = fullName
+      .split(" ")
+      .map((name) => name.charAt(0))
+      .reduce((acc, cur) => acc + cur, "");
+    return result;
+  } catch (error) {
+    return "W";
+  }
 };
 
 export const AccountCard: FC = () => {
