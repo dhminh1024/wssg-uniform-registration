@@ -11,7 +11,7 @@ const DISPLAY_NAME = "Home";
 const Component: FC = () => {
   return (
     <Container>
-      {/* <h1 className="text-4xl font-bold">WSSG Uniform Registration 2024</h1>
+      {/* <h1 className="text-4xl font-bold">Uniform Registration 2024</h1>
       <Separator className="my-6" /> */}
       <div className="grid grid-cols-1 items-start justify-center gap-6 rounded-lg md:grid-cols-3">
         <div className="col-span-1 grid item-starts gap-6">
