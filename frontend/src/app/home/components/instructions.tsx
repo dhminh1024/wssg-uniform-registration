@@ -27,9 +27,9 @@ export const Instructions: FC<InstructionsProps> = () => {
           <li className="text-sm">{t("Instructions Step 1")}</li>
           <li className="text-sm">
             {t("Instructions Step 2")}{" "}
-            <span className="font-semibold">
+            {/* <span className="font-semibold">
               {fCurrency(Number(useAppStore.getState().budget))}
-            </span>
+            </span> */}
           </li>
           <li className="text-sm">
             {t("Instructions Step 3")}{" "}

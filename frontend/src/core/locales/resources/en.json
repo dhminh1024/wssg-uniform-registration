@@ -38,7 +38,7 @@
   "Something went wrong description": "Please try again or contact digital.learning@wellspringsaigon.edu.vn for support.",
   "Instructions": "Instructions",
   "Instructions Step 1": "Select the quantity and size of the product you want to order → Press the Order button",
-  "Instructions Step 2": "The total order value must not exceed your budget",
+  "Instructions Step 2": "If the total order value exceeds the budget, you will have to pay extra",
   "Instructions Step 3": "You can go back to edit your cart at any time → Press the button",
   "Instructions Step 4": "The school supports {{discount}} value of the order if you register over the budget",
   "Notes": "Notes",
