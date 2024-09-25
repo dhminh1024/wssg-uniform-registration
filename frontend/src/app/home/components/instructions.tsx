@@ -35,6 +35,17 @@ export const Instructions: FC<InstructionsProps> = () => {
             {t("Instructions Step 3")}{" "}
             <EditIcon className="h-4 w-4 inline text-orange-500" />
           </li>
+          <li className="text-sm">
+            {t("Instructions Step 5")}
+            {": "}
+            <a
+              href="https://wellspringedu-my.sharepoint.com/:x:/g/personal/huong_lethithu_wellspring_edu_vn/EQMpdBd-5AZAo7wsCW9AiDsBhC0J-ytQKlE0s3qk52JIzg?e=tVo6k9"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Link
+            </a>
+          </li>
           {!allowRegistration && (
             <li className="text-sm font-semibold text-red-500">
               {t("Registration has been disabled")}
