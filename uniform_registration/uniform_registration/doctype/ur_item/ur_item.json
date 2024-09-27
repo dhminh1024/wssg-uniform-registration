@@ -21,6 +21,7 @@
    "fieldtype": "Data",
    "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Title",
    "reqd": 1
   },
@@ -42,6 +43,7 @@
    "fieldtype": "Select",
    "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Gender",
    "options": "Male\nFemale\nAll"
   },
@@ -80,7 +82,7 @@
  "image_field": "item_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-07 13:56:11.156520",
+ "modified": "2024-09-27 13:58:36.942237",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Item",

@@ -15,6 +15,7 @@
    "fieldtype": "Link",
    "in_filter": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Employee",
    "options": "UR Employee",
    "reqd": 1
@@ -38,7 +39,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-05 13:56:12.301244",
+ "modified": "2024-09-27 13:57:51.784344",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Order",
