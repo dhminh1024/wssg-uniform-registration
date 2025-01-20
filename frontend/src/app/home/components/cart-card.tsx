@@ -142,7 +142,9 @@ export const CartCard: FC = () => {
               {/* {budgetLeft > 0
                 ? `Within budget! ${fCurrency(Number(budgetLeft))} left`
                 : `Out of budget: ${fCurrency(Number(budgetLeft))}`}{" "} */}
-              {budgetLeft > 0 ? (
+
+              {/* Disable showing budget for using in 01/2025 */}
+              {/* {budgetLeft > 0 ? (
                 <Trans
                   i18nKey={"Within Budget"}
                   values={{
@@ -176,7 +178,7 @@ export const CartCard: FC = () => {
                     />
                   )}
                 </>
-              )}
+              )} */}
             </span>
           </div>
         ) : null}

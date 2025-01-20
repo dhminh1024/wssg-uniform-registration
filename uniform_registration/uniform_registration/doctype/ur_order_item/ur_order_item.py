@@ -20,7 +20,6 @@ class UROrderItem(Document):
 		item_title: DF.Data
 		item_title_en: DF.Data
 		notes: DF.LongText | None
-		order_id: DF.Link
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data

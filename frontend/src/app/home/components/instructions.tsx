@@ -25,12 +25,12 @@ export const Instructions: FC<InstructionsProps> = () => {
       <CardContent className="grid gap-4">
         <ul className="list-disc list-inside space-y-2">
           <li className="text-sm">{t("Instructions Step 1")}</li>
-          <li className="text-sm">
+          {/* <li className="text-sm">
             {t("Instructions Step 2")}{" "}
             <span className="font-semibold">
               {fCurrency(Number(useAppStore.getState().budget))}
             </span>
-          </li>
+          </li> */}
           <li className="text-sm">
             {t("Instructions Step 3")}{" "}
             <EditIcon className="h-4 w-4 inline text-orange-500" />

@@ -42,7 +42,7 @@ def get_data(filters):
     data = frappe.db.sql(
         f"""
         SELECT 
-            `tabUR Employee`.name AS order_id,
+            `tabUR Employee`.name AS employee_id,
             `tabUR Employee`.full_name AS employee_name,
             `tabUR Employee`.employee_code AS employee_code,
             `tabUR Employee`.email AS employee_email,

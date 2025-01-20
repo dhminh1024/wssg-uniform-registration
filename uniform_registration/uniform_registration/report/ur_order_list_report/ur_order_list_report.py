@@ -49,7 +49,7 @@ def get_data(filters):
             `tabUR Employee Type`.title AS employee_type,
             `tabUR Order Item`.item_id AS item_id,
             `tabUR Order Item`.item_title AS item_title,
-            `tabUR Order Item`.size AS size,
+        `tabUR Order Item`.size AS size,
             `tabUR Order Item`.notes AS notes,
             `tabUR Order Item`.quantity AS quantity,
             `tabUR Order Item`.price AS price,

@@ -31,6 +31,7 @@ export const AccountCard: FC = () => {
   return (
     <Card>
       <CardContent className="grid gap-4 mt-4">
+        <div>Welcome!</div>
         <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all hover:bg-accent hover:text-accent-foreground">
           <Avatar>
             <AvatarImage src="currentUser.avatar" />
@@ -44,7 +45,7 @@ export const AccountCard: FC = () => {
           </div>
         </div>
 
-        <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all">
+        {/* <div className="-mx-2 flex items-start space-x-4 rounded-md p-2 transition-all">
           <CircleDollarSign className="mt-px h-5 w-5" />
           <div className="space-y-1">
             <p className="text-lg font-medium leading-none">{t("Budget")}</p>
@@ -52,11 +53,11 @@ export const AccountCard: FC = () => {
               {fCurrency(Number(useAppStore.getState().budget))}
             </p>
           </div>
-        </div>
+        </div> */}
       </CardContent>
-      <CardFooter>
+      {/* <CardFooter>
         <Button className="w-full hidden">Submit</Button>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 };
