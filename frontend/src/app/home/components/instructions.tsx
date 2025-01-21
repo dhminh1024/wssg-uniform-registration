@@ -18,7 +18,7 @@ export const Instructions: FC<InstructionsProps> = () => {
   return (
     <Card>
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-semibold">
+        <CardTitle className="text-xl font-semibold">
           {t("Instructions")}
         </CardTitle>
       </CardHeader>

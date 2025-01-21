@@ -70,7 +70,7 @@ export const CartCard: FC = () => {
   return (
     <Card>
       <CardHeader className="space-y-1">
-        <CardTitle className="text-lg font-semibold">
+        <CardTitle className="text-xl font-semibold">
           {t("Your Shopping Cart")}
         </CardTitle>
         <CardDescription>{t("What you have ordered")}</CardDescription>

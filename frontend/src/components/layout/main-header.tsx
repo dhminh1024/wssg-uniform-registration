@@ -20,7 +20,9 @@ export const MainHeader: FC<MainHeaderProps> = () => {
           <Logo className="w-[150px]" />
         </div>
         <div className={"hidden w-4/12 justify-center lg:flex"}>
-          <h3 className="text-xl font-semibold">{t("Uniform Registration")}</h3>
+          <h3 className="text-2xl font-semibold uppercase">
+            {t("Uniform Registration")}
+          </h3>
         </div>
         <div className={"flex flex-1 items-center justify-end space-x-4"}>
           <div className="w-20 md:w-32">
