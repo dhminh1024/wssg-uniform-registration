@@ -2,6 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
+ "autoname": "field:employee_code",
  "creation": "2024-04-02 13:38:16.478415",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -23,7 +24,8 @@
    "in_filter": 1,
    "in_list_view": 1,
    "label": "Employee Code",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "full_name",
@@ -87,11 +89,11 @@
  "image_field": "avatar",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-20 09:16:20.845763",
+ "modified": "2025-05-20 11:28:46.781400",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Employee",
- "naming_rule": "By script",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -129,6 +131,7 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "employee_code",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
