@@ -49,10 +49,11 @@
    "precision": "2"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-06-17 10:07:01.187248",
+ "modified": "2025-05-20 09:15:13.829630",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Settings",
@@ -77,8 +78,16 @@
    "role": "UR Admin",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Guest",
+   "share": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

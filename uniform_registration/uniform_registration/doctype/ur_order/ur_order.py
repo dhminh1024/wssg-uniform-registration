@@ -13,14 +13,11 @@ class UROrder(Document):
 
     if TYPE_CHECKING:
         from frappe.types import DF
-        from uniform_registration.uniform_registration.doctype.ur_order_item.ur_order_item import (
-            UROrderItem,
-        )
+        from uniform_registration.uniform_registration.doctype.ur_order_item.ur_order_item import UROrderItem
 
         employee_id: DF.Link
         shopping_cart: DF.Table[UROrderItem]
         total_price: DF.Float
-
     # end: auto-generated types
     def add_to_order(
         self,

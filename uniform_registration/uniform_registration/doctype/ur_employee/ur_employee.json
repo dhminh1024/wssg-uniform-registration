@@ -83,10 +83,11 @@
    "options": "None\nOrdered"
   }
  ],
+ "grid_page_length": 50,
  "image_field": "avatar",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-11 16:08:24.276076",
+ "modified": "2025-05-20 09:16:20.845763",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Employee",
@@ -116,8 +117,18 @@
    "role": "UR Admin",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
   }
  ],
+ "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
