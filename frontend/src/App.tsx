@@ -25,14 +25,14 @@ const App: FC = () => {
     <Suspense fallback={<FullPageLoader />}>
       <FrappeProvider
         // url={import.meta.env.VITE_FRAPPE_PATH ?? ""}
-        tokenParams={{
-          useToken: true,
-          token: () =>
-            `${import.meta.env.VITE_API_KEY}:${
-              import.meta.env.VITE_API_SECRET
-            }`,
-          type: "token",
-        }}
+        // tokenParams={{
+        //   useToken: true,
+        //   token: () =>
+        //     `${import.meta.env.VITE_API_KEY}:${
+        //       import.meta.env.VITE_API_SECRET
+        //     }`,
+        //   type: "token",
+        // }}
         enableSocket={true}
         socketPort={import.meta.env.VITE_SOCKET_PORT}
         siteName={getSiteName()}
