@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
+ "allow_import": 1,
  "allow_rename": 1,
  "creation": "2024-04-02 13:58:31.467249",
  "doctype": "DocType",
@@ -81,7 +82,7 @@
  "image_field": "item_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-20 09:16:39.992689",
+ "modified": "2025-05-21 13:05:26.479387",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Item",
@@ -107,6 +108,19 @@
    "report": 1,
    "role": "Guest",
    "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "UR Admin",
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",

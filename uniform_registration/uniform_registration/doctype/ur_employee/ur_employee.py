@@ -26,6 +26,15 @@ class UREmployee(Document):
     def get_budget(self):
         return frappe.get_doc("UR Employee Type", self.employee_type_id).budget
 
+    # def before_save(self):
+    #     if not self.avatar:
+    #         try:
+    #             self.avatar = frappe.get_value(
+    #                 "SIS Person", {"email": self.email}, "avatar"
+    #             )
+    #         except Exception as e:
+    #             self.avatar = ""
+
 
 @frappe.whitelist()
 def get_percentage_of_ordered_employee():
