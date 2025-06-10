@@ -1,4 +1,4 @@
-import { sentryVitePlugin } from "@sentry/vite-plugin";
+// import { sentryVitePlugin } from "@sentry/vite-plugin";
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -8,10 +8,10 @@ import proxyOptions from "./proxyOptions";
 export default defineConfig({
   plugins: [
     react(),
-    sentryVitePlugin({
-      org: "wellspring-international-bilin",
-      project: "javascript-react",
-    }),
+    // sentryVitePlugin({
+    //   org: "wellspring-international-bilin",
+    //   project: "javascript-react",
+    // }),
   ],
   server: {
     port: 8080,

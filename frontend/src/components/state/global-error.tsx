@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import * as Sentry from "@sentry/react";
+// import * as Sentry from "@sentry/react";
 import { Button } from "@/components/ui/button";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -14,9 +14,9 @@ export type GlobalErrorProps = {
 export const GlobalError: FC<GlobalErrorProps> = () => {
   const { t } = useTranslation();
   const error = useRouteError();
-  if (import.meta.env.MODE !== "development" && error) {
-    Sentry.captureException(error);
-  }
+  // if (import.meta.env.MODE !== "development" && error) {
+  //   Sentry.captureException(error);
+  // }
 
   return (
     <div className="flex flex-col gap-6 items-center min-h-[100vh]">

@@ -10,8 +10,6 @@ export interface UROrderItem{
 	parentfield?: string
 	parenttype?: string
 	idx?: number
-	/**	Order : Link - UR Order	*/
-	order_id: string
 	/**	Item : Link - UR Item	*/
 	item_id: string
 	/**	Item Title : Data	*/

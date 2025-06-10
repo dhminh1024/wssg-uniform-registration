@@ -2,7 +2,7 @@ import frappe
 from .utils import check_allow_registration
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def add_to_order(employee_id, product_id, quantity, size):
     check_allow_registration()
 
@@ -36,7 +36,7 @@ def add_to_order(employee_id, product_id, quantity, size):
     return f"Added {quantity} items to order"
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def delete_order_item(employee_id, order_item_id):
     check_allow_registration()
 
@@ -50,7 +50,7 @@ def delete_order_item(employee_id, order_item_id):
         frappe.throw("Order not found")
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def update_order_item(employee_id, order_item_id, size, quantity, notes):
     # check_allow_registration()
 
@@ -66,7 +66,7 @@ def update_order_item(employee_id, order_item_id, size, quantity, notes):
         frappe.throw("Order not found")
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_employee_order(employee_id):
     order = frappe.get_all(
         "UR Order", filters={"employee_id": employee_id}, fields=["name"]

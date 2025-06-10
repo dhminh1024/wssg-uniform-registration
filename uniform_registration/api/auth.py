@@ -19,7 +19,7 @@ def sign_in(email, password):
         frappe.throw("User not found")
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_current_user(user_id):
     query = (
         frappe.qb.from_(employee)
