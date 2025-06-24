@@ -9,7 +9,8 @@
   "allow_over_budget",
   "allow_registration",
   "tailor_made_price",
-  "over_budget_discount"
+  "over_budget_discount",
+  "size_instruction_link"
  ],
  "fields": [
   {
@@ -47,12 +48,17 @@
    "label": "Over Budget Discount",
    "non_negative": 1,
    "precision": "2"
+  },
+  {
+   "fieldname": "size_instruction_link",
+   "fieldtype": "Data",
+   "label": "Size Instruction Link"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-06-10 16:03:21.954216",
+ "modified": "2025-06-24 14:50:26.391013",
  "modified_by": "Administrator",
  "module": "Uniform Registration",
  "name": "UR Settings",

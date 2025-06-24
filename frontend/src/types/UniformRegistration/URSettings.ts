@@ -20,4 +20,6 @@ export interface URSettings{
 	tailor_made_price: number
 	/**	Over Budget Discount : Float	*/
 	over_budget_discount?: number
+	/**	Size Instruction Link : Data	*/
+	size_instruction_link?: string
 }

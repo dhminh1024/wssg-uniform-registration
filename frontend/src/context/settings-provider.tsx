@@ -7,6 +7,7 @@ interface SettingsContextProps {
   allowRegistration?: 0 | 1;
   tailorMadePrice?: number;
   overBudgetDiscount?: number;
+  sizeInstructionLink: string;
 }
 
 export const SettingsContext = createContext<SettingsContextProps>({
@@ -14,6 +15,7 @@ export const SettingsContext = createContext<SettingsContextProps>({
   allowRegistration: 1,
   tailorMadePrice: 0,
   overBudgetDiscount: 0,
+  sizeInstructionLink: "",
 });
 
 export const SettingsProvider: React.FC<React.PropsWithChildren> = ({
@@ -28,6 +30,7 @@ export const SettingsProvider: React.FC<React.PropsWithChildren> = ({
     allowRegistration: data?.message.allow_registration,
     tailorMadePrice: data?.message.tailor_made_price,
     overBudgetDiscount: data?.message.over_budget_discount,
+    sizeInstructionLink: data?.message.size_instruction_link || "",
   };
 
   return (
