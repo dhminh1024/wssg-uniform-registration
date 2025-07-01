@@ -44,11 +44,11 @@ export const Instructions: FC<InstructionsProps> = () => {
               {t("Instructions Step 5")}{" "}
               <a
                 href={sizeInstructionLink}
-                className="text-blue-500 hover:underline"
+                className="px-4 py-1 bg-blue-500 text-white font-bold uppercase rounded hover:bg-blue-600"
                 target="_blank"
                 rel="noreferrer"
               >
-                Link
+                LINK
               </a>
             </li>
           )}
